@@ -17,6 +17,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         }
         public DbSet<Inventario> Inventarios { get; set; }
 
+        public DbSet<Proveedores> Proveedores { get; set; }
+
     }
 
 }
