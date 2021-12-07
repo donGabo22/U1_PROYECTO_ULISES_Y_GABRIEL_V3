@@ -36,7 +36,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            panelmenu.Visible = false;
+         //   panelmenu.Visible = false;
             this.Close();
           
         }
@@ -62,7 +62,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void pbProovedores_Click(object sender, EventArgs e)
         {
-
+            FormProveedores frmprov = new FormProveedores();
+            frmprov.Show();
         }
 
         private void pbLista_Click(object sender, EventArgs e)
