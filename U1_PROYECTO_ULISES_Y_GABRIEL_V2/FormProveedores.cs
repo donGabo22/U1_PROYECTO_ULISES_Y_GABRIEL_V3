@@ -87,7 +87,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             }
 
         }
-//añslkdfjañlskdjfaldskjfañlskdjfañlskdjfañlskdjfañlskdjf
         private void Limpiar()
         {
             txtNombre.Text = "";
@@ -130,6 +129,11 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             //lblHora.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToString("d/MM/yyyy");
             lblHoraandFecha.Text = DateTime.Now.ToString();
+            //hola
+        }
+
+        private void pbMenu_Click(object sender, EventArgs e)
+        {
 
         }
     }
