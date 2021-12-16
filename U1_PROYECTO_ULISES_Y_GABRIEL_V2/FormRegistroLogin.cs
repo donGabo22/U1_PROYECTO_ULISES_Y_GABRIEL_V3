@@ -8,16 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using U1_PROYECTO_ULISES_Y_GABRIEL_V2.Models;
 namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 {
-    public partial class FormRegistroLogin : MaterialSkin.Controls.MaterialForm
+    public partial class FormRegistroLogin : Form
     {
         public FormRegistroLogin()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
+    //        materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             lblFecha.Font = new Font(lblFecha.Font.Name, 8);
@@ -39,14 +39,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
 
 
-
-
-
-
-
-
-
-
         private void horayfecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("H:mm:ss");
@@ -62,39 +54,22 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             panelmenu.Visible = false;
-            this.Close();
+           
         }
         private void btnCreditos_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("PROYECTO HECHO POR: \n " +
-"Gabriel Hernández Diaz N.C 19540444 \n " +
-"Ulises Alejandro Saenz Guerrero N.C 19540123 \n" +
-"MATERIA: Tópicos Avanzados de Programación \n" +
-"PROFE: César Adan Acosta", "Hola Usuario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+            this.Close();
+         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void progreso_Tick(object sender, EventArgs e)
-        {
-            if (pbrTrabajo.Value < 100) 
-                pbrTrabajo.Value++;
-            if (pbrTrabajo.Value == 100)
-                progreso.Enabled = false;
-            //progreso.Stop();
-            //this.Close();
-            if (prbTrabajo2.Value < 100)
-                prbTrabajo2.Value++;
-            if (prbTrabajo2.Value == 100)
-                progreso.Enabled = false;
 
-        }
         private void FormRegistroLogin_Load(object sender, EventArgs e)
         {
-            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+        //    SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             lblFecha.Font = new Font(lblFecha.Font.Name, 8);
             lblHora.Font = new Font(lblHora.Font.Name, 8);
             label1.Font = new Font(label1.Font.Name, 20);
@@ -106,21 +81,85 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
 
         }
-
-        private void btnFinalizarRegistro_Click(object sender, EventArgs e)
+        private void progreso_Tick(object sender, EventArgs e)
         {
-            if (txbContraseña.Text == txbConfirmar.Text)
+            if (pbrTrabajo.Value < 100)
+                pbrTrabajo.Value++;
+
+            if (pbrTrabajo.Value == 100)
             {
-                btnFinalizarRegistro.Enabled = true;
+                progreso.Enabled = false;
+                progreso.Stop();
+                this.Close();
+            }
+            if (prbTrabajo2.Value < 100)
+                prbTrabajo2.Value++;
+
+            if (prbTrabajo2.Value == 100)
+            {
+                progreso.Enabled = false;
+
             }
 
+
+        }
+        private void btnFinalizarRegistro_Click(object sender, EventArgs e)
+        {
+
+            btnFinalizarRegistro.Visible = false;//?
             progreso.Enabled = true;
             pbrTrabajo.Value = 0;
             prbTrabajo2.Value = 0;
 
-            FormLogin frmL = new FormLogin(txbEmail.Text, txbContraseña.Text);
-            frmL.Show();
-        
+            using (var context = new ApplicationDbContext())
+            {
+                //paso 1 crear el objeto 
+                var registro1 = new Registros();
+                registro1.Nombre = txbNombre.Text;
+                registro1.Apellido = txbApellido.Text;
+                registro1.Email = txbEmail.Text;
+                registro1.Contraseña = txbContraseña.Text;
+
+                context.registros.Add(registro1);
+
+
+
+                context.SaveChanges();
+
+
+            }
+            using (var context = new ApplicationDbContext())
+            {
+                var inv = context.registros.ToList();
+                //dgvinventario.DataSource = inv;
+            }
+
+
         }
+
+        private void txbConfirmar_TextChanged(object sender, EventArgs e)
+        {
+            txbConfirmar.Text = txbConfirmar.Text;
+            if (txbConfirmar.Text== txbContraseña.Text)
+            {
+                btnFinalizarRegistro.Enabled = true;
+                label7.Text = ".";
+                pberror.Visible = false;
+                pbcorrecto.Visible = true;
+            }
+            if (txbConfirmar.Text != txbContraseña.Text)
+            {
+                  btnFinalizarRegistro.Enabled = false;
+                  label7.Text = "la contraseña no coincide";
+                pbcorrecto.Visible = false;
+                pberror.Visible = true;
+               
+            }
+
+        }
+
+
+
+      
     }
 }

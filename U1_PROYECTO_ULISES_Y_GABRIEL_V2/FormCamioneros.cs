@@ -116,7 +116,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             using (var context = new ApplicationDbContext())
             {
                 var Cam = context.Camionero.Where(x => x.Nombre.Contains(txtNombre.Text)).ToList();
-                dgvCamionero.DataSource = Prov;
+    //            dgvCamionero.DataSource = Prov;
             }
         }
     }

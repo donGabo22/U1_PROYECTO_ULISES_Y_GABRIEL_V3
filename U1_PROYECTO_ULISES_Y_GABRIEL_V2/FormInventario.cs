@@ -38,6 +38,15 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         {
             AgregarProducto();
             todoProducto();
+            Limpiar();
+        }
+        private void Limpiar()
+        {
+         txbNombre.Text="";
+         cbTipo.Text="";
+         txbCantidad.Text="";
+         txbprecio.Text="";
+         txbZona.Text="";
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)

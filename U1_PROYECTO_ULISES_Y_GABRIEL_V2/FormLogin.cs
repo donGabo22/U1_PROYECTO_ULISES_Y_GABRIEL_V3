@@ -11,42 +11,66 @@ using System.Windows.Forms;
 
 namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 {
-    public partial class FormLogin : MaterialSkin.Controls.MaterialForm
+    public partial class FormLogin : Form
     {
-        String EmailID, contraseña;
+        public int id = 0;
+        public string email = "";
+
+    
         public FormLogin()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
+        //    materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             label1.Font = new Font(label1.Font.Name, 12);
             label2.Font = new Font(label2.Font.Name, 12);
         }
 
-        public FormLogin(String EmailID, String contraseña)
-        {
 
-            this.EmailID = EmailID;
-            this.contraseña = contraseña;
-
-        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if ((txbUsuario.Text == "Admin" && (txbContraseña.Text == "pass")) || (txbUsuario.Text == EmailID && (txbContraseña.Text == contraseña)))
+            if (txbUsuario.Text == "Admin" && txbContraseña.Text == "pass")
             {
                 FormMenu frmMenu = new FormMenu();
                 frmMenu.ShowDialog();
             }
-            if ((txbUsuario.Text != "Admin" || (txbContraseña.Text != "pass")) || (txbUsuario.Text != EmailID || (txbContraseña.Text != contraseña)))
-            {
-                MessageBox.Show("Error, Nombre de Usuario o Contraseña incorrectos", "Error:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-
         }
+
+
+        private void conexion()
+        {
+            //using (var context = new ApplicationDbContext())
+            //{
+            //    if (id != 0)
+            //    {
+            //        var registro1 = context.registros.First(x => x.Email == email);
+            //        FormLogin registro = new FormLogin();
+            //        r = context.registros.First(y => y.Id == id);
+            //        if (r != null)
+            //        {
+            //            if (registro.txbContraseña.Text = r.contraseña)
+            //            {
+            //                FormMenu frmMenu = new FormMenu();
+            //                frmMenu.ShowDialog();
+
+            //                //?                        }
+
+            //            }
+            //        }
+            //    }
+            //}
+        }
+
+
+      
+        
+
+
+
+
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -92,7 +116,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+           // SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
             lblFecha.Font = new Font(lblFecha.Font.Name, 8);
             lblHora.Font = new Font (lblHora.Font.Name,8);
             label1.Font = new Font(label1.Font.Name, 12);

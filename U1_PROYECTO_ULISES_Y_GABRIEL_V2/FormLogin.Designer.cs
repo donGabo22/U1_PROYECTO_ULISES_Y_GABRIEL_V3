@@ -43,10 +43,10 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.label1 = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.panelmenu = new System.Windows.Forms.Panel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.btnCreditos = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.panelmenu.SuspendLayout();
@@ -57,8 +57,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.lblHora.AutoSize = true;
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHora.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblHora.Location = new System.Drawing.Point(429, 64);
+            this.lblHora.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblHora.Location = new System.Drawing.Point(415, 0);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(65, 32);
             this.lblHora.TabIndex = 0;
@@ -69,8 +69,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.lblFecha.AutoSize = true;
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFecha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFecha.Location = new System.Drawing.Point(179, 63);
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblFecha.Location = new System.Drawing.Point(109, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(76, 32);
             this.lblFecha.TabIndex = 1;
@@ -80,7 +80,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.pbMenu.BackColor = System.Drawing.Color.Transparent;
             this.pbMenu.Image = ((System.Drawing.Image)(resources.GetObject("pbMenu.Image")));
-            this.pbMenu.Location = new System.Drawing.Point(3, 64);
+            this.pbMenu.Location = new System.Drawing.Point(6, 0);
             this.pbMenu.Name = "pbMenu";
             this.pbMenu.Size = new System.Drawing.Size(32, 42);
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,7 +97,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
-            this.btnRegistrar.Location = new System.Drawing.Point(98, 527);
+            this.btnRegistrar.Location = new System.Drawing.Point(80, 456);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(299, 37);
             this.btnRegistrar.TabIndex = 19;
@@ -108,7 +108,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // btnLogin
             // 
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnLogin.Location = new System.Drawing.Point(188, 479);
+            this.btnLogin.Location = new System.Drawing.Point(166, 418);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(139, 32);
             this.btnLogin.TabIndex = 15;
@@ -118,7 +118,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbContraseña
             // 
-            this.txbContraseña.Location = new System.Drawing.Point(164, 416);
+            this.txbContraseña.Location = new System.Drawing.Point(142, 366);
             this.txbContraseña.Name = "txbContraseña";
             this.txbContraseña.PasswordChar = '*';
             this.txbContraseña.PlaceholderText = "Password";
@@ -127,7 +127,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbUsuario
             // 
-            this.txbUsuario.Location = new System.Drawing.Point(164, 361);
+            this.txbUsuario.Location = new System.Drawing.Point(142, 311);
             this.txbUsuario.Name = "txbUsuario";
             this.txbUsuario.PlaceholderText = "Email ID";
             this.txbUsuario.Size = new System.Drawing.Size(190, 31);
@@ -137,10 +137,11 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(188, 386);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(166, 336);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 32);
+            this.label2.Size = new System.Drawing.Size(150, 32);
             this.label2.TabIndex = 12;
             this.label2.Text = "Contraseña:";
             // 
@@ -148,10 +149,11 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(210, 326);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(188, 276);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 32);
+            this.label1.Size = new System.Drawing.Size(109, 32);
             this.label1.TabIndex = 11;
             this.label1.Text = "Usuario:";
             // 
@@ -160,7 +162,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.pbImagen.BackColor = System.Drawing.Color.Transparent;
             this.pbImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbImagen.Image = ((System.Drawing.Image)(resources.GetObject("pbImagen.Image")));
-            this.pbImagen.Location = new System.Drawing.Point(173, 144);
+            this.pbImagen.Location = new System.Drawing.Point(146, 102);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(181, 148);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,28 +171,16 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // panelmenu
             // 
-            this.panelmenu.BackColor = System.Drawing.SystemColors.Control;
-            this.panelmenu.Controls.Add(this.materialLabel1);
+            this.panelmenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelmenu.Controls.Add(this.label3);
             this.panelmenu.Controls.Add(this.btnCreditos);
             this.panelmenu.Controls.Add(this.btnRegresar);
             this.panelmenu.Controls.Add(this.btnSalir);
-            this.panelmenu.Location = new System.Drawing.Point(6, 112);
+            this.panelmenu.Location = new System.Drawing.Point(6, 48);
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(109, 214);
             this.panelmenu.TabIndex = 20;
             this.panelmenu.Visible = false;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(3, 17);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(104, 19);
-            this.materialLabel1.TabIndex = 21;
-            this.materialLabel1.Text = "Mas opciones:";
             // 
             // btnCreditos
             // 
@@ -225,10 +215,22 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(6, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 56);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Mas \r\nopciones:";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.neon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(500, 580);
             this.Controls.Add(this.pbMenu);
@@ -244,7 +246,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.Controls.Add(this.label1);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormLogin";
+            this.Text = "Bienvenido";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
@@ -272,6 +274,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         private System.Windows.Forms.Button btnCreditos;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnSalir;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.Label label3;
     }
 }

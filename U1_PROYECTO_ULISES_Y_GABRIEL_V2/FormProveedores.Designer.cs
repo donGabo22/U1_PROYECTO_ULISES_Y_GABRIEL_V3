@@ -44,11 +44,9 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblHora = new System.Windows.Forms.Label();
+            this.lblH = new System.Windows.Forms.Label();
             this.pbMenu = new System.Windows.Forms.PictureBox();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblHoraandFecha = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblF = new System.Windows.Forms.Label();
             this.horayfecha = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,8 +73,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // dgvProveedor
             // 
-            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Location = new System.Drawing.Point(277, 52);
+            this.dgvProveedor.ColumnHeadersHeight = 34;
+            this.dgvProveedor.Location = new System.Drawing.Point(264, 53);
             this.dgvProveedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.RowHeadersWidth = 62;
@@ -177,25 +175,25 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.panel1.BackgroundImage = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.rosa;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.lblHora);
+            this.panel1.Controls.Add(this.lblH);
             this.panel1.Controls.Add(this.pbMenu);
-            this.panel1.Controls.Add(this.lblFecha);
+            this.panel1.Controls.Add(this.lblF);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 604);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 40);
             this.panel1.TabIndex = 23;
             // 
-            // lblHora
+            // lblH
             // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.BackColor = System.Drawing.Color.Transparent;
-            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHora.Location = new System.Drawing.Point(899, -2);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(44, 21);
-            this.lblHora.TabIndex = 0;
-            this.lblHora.Text = "Hora";
+            this.lblH.AutoSize = true;
+            this.lblH.BackColor = System.Drawing.Color.Transparent;
+            this.lblH.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblH.Location = new System.Drawing.Point(899, 4);
+            this.lblH.Name = "lblH";
+            this.lblH.Size = new System.Drawing.Size(44, 21);
+            this.lblH.TabIndex = 0;
+            this.lblH.Text = "Hora";
             // 
             // pbMenu
             // 
@@ -207,42 +205,22 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMenu.TabIndex = 3;
             this.pbMenu.TabStop = false;
+            this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click_1);
             // 
-            // lblFecha
+            // lblF
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.BackColor = System.Drawing.Color.Transparent;
-            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFecha.Location = new System.Drawing.Point(879, 19);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(50, 21);
-            this.lblFecha.TabIndex = 1;
-            this.lblFecha.Text = "Fecha";
-            // 
-            // lblHoraandFecha
-            // 
-            this.lblHoraandFecha.AutoSize = true;
-            this.lblHoraandFecha.BackColor = System.Drawing.Color.White;
-            this.lblHoraandFecha.Font = new System.Drawing.Font("Gabriola", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHoraandFecha.Location = new System.Drawing.Point(703, -1);
-            this.lblHoraandFecha.Name = "lblHoraandFecha";
-            this.lblHoraandFecha.Size = new System.Drawing.Size(138, 45);
-            this.lblHoraandFecha.TabIndex = 85;
-            this.lblHoraandFecha.Text = "Aqui va la fecha";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(520, -8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 55);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "Fecha de Registro:";
+            this.lblF.AutoSize = true;
+            this.lblF.BackColor = System.Drawing.Color.Transparent;
+            this.lblF.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblF.Location = new System.Drawing.Point(879, 19);
+            this.lblF.Name = "lblF";
+            this.lblF.Size = new System.Drawing.Size(50, 21);
+            this.lblF.TabIndex = 1;
+            this.lblF.Text = "Fecha";
             // 
             // horayfecha
             // 
+            this.horayfecha.Enabled = true;
             this.horayfecha.Tick += new System.EventHandler(this.horayfecha_Tick);
             // 
             // FormProveedores
@@ -252,8 +230,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.BackgroundImage = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.rosa;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(978, 644);
-            this.Controls.Add(this.lblHoraandFecha);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBuscar);
@@ -269,6 +245,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProveedores";
             this.Load += new System.EventHandler(this.FormProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
@@ -295,11 +272,9 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.PictureBox pbMenu;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label lblHoraandFecha;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblF;
         private System.Windows.Forms.Timer horayfecha;
+        private System.Windows.Forms.Label lblH;
     }
 }

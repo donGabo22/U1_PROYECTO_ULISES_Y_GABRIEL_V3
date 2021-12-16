@@ -103,9 +103,49 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap naranja {
+            get {
+                object obj = ResourceManager.GetObject("naranja", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap neon {
+            get {
+                object obj = ResourceManager.GetObject("neon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pixlr_bg_result {
             get {
                 object obj = ResourceManager.GetObject("pixlr-bg-result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixlr_bg_result__2_ {
+            get {
+                object obj = ResourceManager.GetObject("pixlr-bg-result (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixlr_bg_result__3_ {
+            get {
+                object obj = ResourceManager.GetObject("pixlr-bg-result (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

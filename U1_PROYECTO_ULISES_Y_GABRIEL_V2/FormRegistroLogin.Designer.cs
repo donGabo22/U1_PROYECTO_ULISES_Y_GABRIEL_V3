@@ -53,14 +53,19 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.panelmenu = new System.Windows.Forms.Panel();
             this.btnCreditos = new System.Windows.Forms.Button();
             this.progreso = new System.Windows.Forms.Timer(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.pberror = new System.Windows.Forms.PictureBox();
+            this.pbcorrecto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             this.panelmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pberror)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcorrecto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegresar
             // 
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnRegresar.Location = new System.Drawing.Point(124, 3);
+            this.btnRegresar.Location = new System.Drawing.Point(7, 1);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(115, 39);
             this.btnRegresar.TabIndex = 23;
@@ -71,7 +76,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // pbrTrabajo
             // 
             this.pbrTrabajo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbrTrabajo.Location = new System.Drawing.Point(40, 492);
+            this.pbrTrabajo.Location = new System.Drawing.Point(40, 465);
             this.pbrTrabajo.Name = "pbrTrabajo";
             this.pbrTrabajo.Size = new System.Drawing.Size(646, 34);
             this.pbrTrabajo.TabIndex = 35;
@@ -91,7 +96,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // btnFinalizarRegistro
             // 
             this.btnFinalizarRegistro.BackColor = System.Drawing.Color.Transparent;
-            this.btnFinalizarRegistro.Location = new System.Drawing.Point(267, 437);
+            this.btnFinalizarRegistro.Enabled = false;
+            this.btnFinalizarRegistro.Location = new System.Drawing.Point(285, 406);
             this.btnFinalizarRegistro.Name = "btnFinalizarRegistro";
             this.btnFinalizarRegistro.Size = new System.Drawing.Size(187, 37);
             this.btnFinalizarRegistro.TabIndex = 34;
@@ -102,8 +108,9 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(40, 120);
+            this.label1.Location = new System.Drawing.Point(43, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(573, 48);
             this.label1.TabIndex = 23;
@@ -111,16 +118,19 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbConfirmar
             // 
-            this.txbConfirmar.Location = new System.Drawing.Point(285, 382);
+            this.txbConfirmar.Location = new System.Drawing.Point(285, 334);
             this.txbConfirmar.Name = "txbConfirmar";
+            this.txbConfirmar.PlaceholderText = "Confirma tu contraseña";
             this.txbConfirmar.Size = new System.Drawing.Size(331, 31);
             this.txbConfirmar.TabIndex = 33;
+            this.txbConfirmar.TextChanged += new System.EventHandler(this.txbConfirmar_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(40, 202);
+            this.label2.Location = new System.Drawing.Point(40, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 32);
             this.label2.TabIndex = 24;
@@ -128,16 +138,18 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbContraseña
             // 
-            this.txbContraseña.Location = new System.Drawing.Point(285, 337);
+            this.txbContraseña.Location = new System.Drawing.Point(285, 289);
             this.txbContraseña.Name = "txbContraseña";
+            this.txbContraseña.PlaceholderText = "Ingresa tu contraseña";
             this.txbContraseña.Size = new System.Drawing.Size(331, 31);
             this.txbContraseña.TabIndex = 32;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(40, 243);
+            this.label3.Location = new System.Drawing.Point(40, 195);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 32);
             this.label3.TabIndex = 25;
@@ -145,16 +157,18 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(285, 290);
+            this.txbEmail.Location = new System.Drawing.Point(285, 242);
             this.txbEmail.Name = "txbEmail";
+            this.txbEmail.PlaceholderText = "Ingresa tu Email aqui";
             this.txbEmail.Size = new System.Drawing.Size(331, 31);
             this.txbEmail.TabIndex = 31;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(40, 287);
+            this.label4.Location = new System.Drawing.Point(40, 239);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 32);
             this.label4.TabIndex = 26;
@@ -162,16 +176,18 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbApellido
             // 
-            this.txbApellido.Location = new System.Drawing.Point(285, 247);
+            this.txbApellido.Location = new System.Drawing.Point(285, 199);
             this.txbApellido.Name = "txbApellido";
+            this.txbApellido.PlaceholderText = "Ingresa tus Apellidos aqui";
             this.txbApellido.Size = new System.Drawing.Size(331, 31);
             this.txbApellido.TabIndex = 30;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(40, 334);
+            this.label5.Location = new System.Drawing.Point(40, 286);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 32);
             this.label5.TabIndex = 27;
@@ -179,16 +195,18 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(285, 205);
+            this.txbNombre.Location = new System.Drawing.Point(285, 157);
             this.txbNombre.Name = "txbNombre";
+            this.txbNombre.PlaceholderText = "Ingresa tu nombre aqui";
             this.txbNombre.Size = new System.Drawing.Size(331, 31);
             this.txbNombre.TabIndex = 29;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(40, 379);
+            this.label6.Location = new System.Drawing.Point(40, 331);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(247, 32);
             this.label6.TabIndex = 28;
@@ -205,7 +223,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.lblFecha.BackColor = System.Drawing.Color.Transparent;
             this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFecha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFecha.Location = new System.Drawing.Point(353, 69);
+            this.lblFecha.Location = new System.Drawing.Point(267, 9);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(76, 32);
             this.lblFecha.TabIndex = 38;
@@ -217,7 +235,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblHora.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblHora.Location = new System.Drawing.Point(604, 64);
+            this.lblHora.Location = new System.Drawing.Point(581, 9);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(65, 32);
             this.lblHora.TabIndex = 37;
@@ -226,7 +244,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // prbTrabajo2
             // 
             this.prbTrabajo2.Depth = 0;
-            this.prbTrabajo2.Location = new System.Drawing.Point(111, 532);
+            this.prbTrabajo2.Location = new System.Drawing.Point(111, 505);
             this.prbTrabajo2.MouseState = MaterialSkin.MouseState.HOVER;
             this.prbTrabajo2.Name = "prbTrabajo2";
             this.prbTrabajo2.Size = new System.Drawing.Size(464, 5);
@@ -234,6 +252,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // panelmenu
             // 
+            this.panelmenu.BackColor = System.Drawing.Color.Transparent;
             this.panelmenu.Controls.Add(this.btnCreditos);
             this.panelmenu.Controls.Add(this.btnRegresar);
             this.panelmenu.Location = new System.Drawing.Point(40, 560);
@@ -245,11 +264,11 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // btnCreditos
             // 
             this.btnCreditos.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCreditos.Location = new System.Drawing.Point(7, 3);
+            this.btnCreditos.Location = new System.Drawing.Point(129, 0);
             this.btnCreditos.Name = "btnCreditos";
             this.btnCreditos.Size = new System.Drawing.Size(115, 39);
             this.btnCreditos.TabIndex = 24;
-            this.btnCreditos.Text = "Ver Creditos";
+            this.btnCreditos.Text = "Cancelar";
             this.btnCreditos.UseVisualStyleBackColor = true;
             this.btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
             // 
@@ -257,11 +276,54 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.progreso.Tick += new System.EventHandler(this.progreso_Tick);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(285, 363);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 25);
+            this.label7.TabIndex = 40;
+            this.label7.Text = ".";
+            // 
+            // pberror
+            // 
+            this.pberror.BackColor = System.Drawing.Color.Transparent;
+            this.pberror.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pberror.Image = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.pixlr_bg_result__2_;
+            this.pberror.Location = new System.Drawing.Point(622, 286);
+            this.pberror.Name = "pberror";
+            this.pberror.Size = new System.Drawing.Size(76, 75);
+            this.pberror.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pberror.TabIndex = 41;
+            this.pberror.TabStop = false;
+            this.pberror.Visible = false;
+            // 
+            // pbcorrecto
+            // 
+            this.pbcorrecto.BackColor = System.Drawing.Color.Transparent;
+            this.pbcorrecto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbcorrecto.Image = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.pixlr_bg_result__3_;
+            this.pbcorrecto.Location = new System.Drawing.Point(622, 286);
+            this.pbcorrecto.Name = "pbcorrecto";
+            this.pbcorrecto.Size = new System.Drawing.Size(76, 75);
+            this.pbcorrecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcorrecto.TabIndex = 42;
+            this.pbcorrecto.TabStop = false;
+            // 
             // FormRegistroLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.naranja;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(700, 600);
+            this.Controls.Add(this.pbcorrecto);
+            this.Controls.Add(this.pberror);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.prbTrabajo2);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblHora);
@@ -286,6 +348,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.Load += new System.EventHandler(this.FormRegistroLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).EndInit();
             this.panelmenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pberror)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcorrecto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +378,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         private System.Windows.Forms.Panel panelmenu;
         private System.Windows.Forms.Button btnCreditos;
         private System.Windows.Forms.Timer progreso;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pberror;
+        private System.Windows.Forms.PictureBox pbcorrecto;
     }
 }

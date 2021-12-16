@@ -28,6 +28,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         {
             RegistrarProv();
             MostrarProv();
+            Limpiar();
         }
 
         private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -52,11 +53,13 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                         Prov.Numero = txtNumero.Text;
                         Prov.Empresa = txtEmpresa.Text;
                         context.SaveChanges();
+
+
                     }
                 }
             }
-            MostrarProv();
-            Limpiar();
+           // MostrarProv();
+           //Limpiar();
             
         }
         private void txtEliminar_Click(object sender, EventArgs e)
@@ -82,7 +85,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         {
             using (var context = new ApplicationDbContext())
             {
-                var Prov = context.Proveedores.Where(x => x.Nombre.Contains(txtNombre.Text)).ToList();
+                var Prov = context.Proveedores.Where(x => x.Nombre.Contains(txtBuscar.Text)).ToList();
                 dgvProveedor.DataSource = Prov;
             }
 
@@ -125,16 +128,21 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void horayfecha_Tick(object sender, EventArgs e)
         {
-            lblHora.Text = DateTime.Now.ToString("H:mm:ss");
+            lblH.Text = DateTime.Now.ToString("H:mm:ss");
             //lblHora.Text = DateTime.Now.ToLongTimeString();
-            lblFecha.Text = DateTime.Now.ToString("d/MM/yyyy");
-            lblHoraandFecha.Text = DateTime.Now.ToString();
-            //hola
+            lblF.Text = DateTime.Now.ToString("d/MM/yyyy");
+
+          
         }
 
         private void pbMenu_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pbMenu_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
