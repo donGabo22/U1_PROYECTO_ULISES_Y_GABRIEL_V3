@@ -21,14 +21,22 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void FormProveedores_Load(object sender, EventArgs e)
         {
-            MostrarProv();
+            MostrarProv();//Mostrar la tabla cuando cargue el Form 
+            Desactivar();//Desactivar botones no necesarios
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            RegistrarProv();
-            MostrarProv();
-            Limpiar();
+            if (txtNombre.Text!="" && txtNumero.Text!="" && txtEmpresa.Text != "")// Condicion para que los campos no queden vacios 
+            {
+                RegistrarProv();// Mando llamar al metodo para registrar
+                MostrarProv();//Actualizar la tabla con el nuevo registro 
+                Limpiar();//Limpiar los campos para nuevas interacciones
+            }
+            else
+            {
+                MessageBox.Show("Favor de llenar todos los campos :)");// En caso de error se dezpliega el mensage
+            }
         }
 
         private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -37,33 +45,28 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             txtNombre.Text = dgvProveedor.CurrentRow.Cells[1].Value.ToString();
             txtNumero.Text = dgvProveedor.CurrentRow.Cells[2].Value.ToString();
             txtEmpresa.Text = dgvProveedor.CurrentRow.Cells[3].Value.ToString();
+
+            Activar();
         }
 
         private void txtModificar_Click(object sender, EventArgs e)
         {
-            using (var context = new ApplicationDbContext())
+            if(txtNombre.Text != "" && txtNumero.Text != "" && txtEmpresa.Text != "")
             {
-                if (id != 0)
-                {
-                    //Busqueda con un ORM
-                    var Prov = context.Proveedores.First(x => x.Id == id);
-                    if (Prov != null)
-                    {
-                        Prov.Nombre = txtNombre.Text;
-                        Prov.Numero = txtNumero.Text;
-                        Prov.Empresa = txtEmpresa.Text;
-                        context.SaveChanges();
-
-
-                    }
-                }
+                Modificar();//Se manda llamar al metodo 
+                MostrarProv();//Se actualiza la tabla con el registro modificado
+                Limpiar();//Se limpian las celdas para reutilizarlas
+                Desactivar();//Se desactivan los botones no necesarios
             }
-           // MostrarProv();
-           //Limpiar();
+            else
+            {
+                MessageBox.Show("Campos vacios favor de llenarlos");
+            }
             
         }
         private void txtEliminar_Click(object sender, EventArgs e)
         {
+            //Se elimina el registro seleccionado
             using (var context = new ApplicationDbContext())
             {
                 if (id != 0)
@@ -77,8 +80,9 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                     }
                 }
             }
-            MostrarProv();
-            Limpiar();
+            MostrarProv();//Se actualiza la tabla con el registro eliminado 
+            Desactivar();//Se desactivan los botones no necesarion 
+            Limpiar();//Se limpian las celdas para reutilizarlas
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -124,6 +128,36 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                 context.SaveChanges();
             }
 
+        }
+
+        public void Modificar()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                if (id != 0)
+                {
+                    //Busqueda con un ORM
+                    var Prov = context.Proveedores.First(x => x.Id == id);
+                    if (Prov != null)
+                    {
+                        Prov.Nombre = txtNombre.Text;
+                        Prov.Numero = txtNumero.Text;
+                        Prov.Empresa = txtEmpresa.Text;
+                        context.SaveChanges();
+                    }
+                }
+            }
+        }
+        public void Activar()// Activar botones de Modificar y eliminar 
+        {
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        public void Desactivar() //Desactivar los botones de modificar y eliminar
+        {
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
         }
 
         private void horayfecha_Tick(object sender, EventArgs e)

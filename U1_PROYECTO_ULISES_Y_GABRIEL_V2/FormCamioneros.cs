@@ -21,26 +21,69 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            using (var context = new ApplicationDbContext())
+            //Verificar que los campos no esten incompletos
+            if (txtNombre.Text!="" && txtNumCamion.Text != "" && txtNumero.Text != "" && txtDireccion.Text != "")
             {
-                //Crear el objeto
-                var Cam = new Camionero();
-                Cam.Nombre = txtNombre.Text;
-                Cam.Numero = txtNumero.Text;
-                Cam.NumCamion = txtNumCamion.Text;
-                Cam.Direccion = txtDireccion.Text;
-
-
-                //Notificamos a EFC el agregar un cliente
-                context.Camionero.Add(Cam);
-
-                //Guardamos los cambios
-                context.SaveChanges();
+                Registrar();//Mandar llamr al metodo que registra 
+                MostrarCam();//Actualizar la tabla con el nuevo registro 
+                Limpiar();//Limpiar las celdas para su reutilizacion
             }
-            MostrarCam();
+            else
+            {
+                //Mostrar mensaje en caso de no cumplir la condicion 
+                MessageBox.Show("Campos vacios porfavor llenarlos ;)");
+            }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
+        {
+            //Asegurarse de que todos los datos esten completos
+            if (txtNombre.Text != "" && txtNumCamion.Text != "" && txtNumero.Text != "" && txtDireccion.Text != "")
+            {
+                Modificar();//Llamar al metodo que modifica el registro
+                MostrarCam();//Actualizar la tabla con el registro modificado
+                Limpiar();//Limpiar las celdas para volver a usarlas
+                Desactivar();//Desactivar botones no necesarios
+            }
+            else
+            {
+                //Mensaje en x¡caso de que no se cumpla la condicion
+                MessageBox.Show("Algunos campos estan vacios favor de llenarlos ;)");
+            }
+            
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //Se elimina el elemento seleccionado 
+            using (var context = new ApplicationDbContext())
+            {
+                if (id != 0)
+                {
+                    //Busqueda con un ORM
+                    var Cam = context.Camionero.First(x => x.Id == id);
+                    if (Cam != null)
+                    {
+                        context.Remove(Cam);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            MostrarCam();//Actualizar la tabla sin el registro 
+            Limpiar();//Limpiar las celdas para volver a usar
+            Desactivar();//Desactivar los botones que no son requridos 
+        }
+
+        private void MostrarCam()//Mostrar los registros
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var Cam = context.Camionero.ToList();
+                dgvCamionero.DataSource = Cam;
+            }
+        }
+
+        private void Modificar()// Modificar el registro seleccionado
         {
             using (var context = new ApplicationDbContext())
             {
@@ -58,38 +101,19 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                     }
                 }
             }
-            MostrarCam();
-            Limpiar();
         }
-        private void btnEliminar_Click(object sender, EventArgs e)
+        public void Activar()//Activar botones Eliminar y modificar
         {
-            using (var context = new ApplicationDbContext())
-            {
-                if (id != 0)
-                {
-                    //Busqueda con un ORM
-                    var Cam = context.Camionero.First(x => x.Id == id);
-                    if (Cam != null)
-                    {
-                        context.Remove(Cam);
-                        context.SaveChanges();
-                    }
-                }
-            }
-            MostrarCam();
-            Limpiar();
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
         }
 
-        private void MostrarCam()
+        public void Desactivar()//Desactivar botones Eliminar y modificar
         {
-            using (var context = new ApplicationDbContext())
-            {
-                var Cam = context.Camionero.ToList();
-                dgvCamionero.DataSource = Cam;
-            }
+            btnModificar.Enabled =false;
+            btnEliminar.Enabled = false;
         }
-
-        private void Limpiar()
+        private void Limpiar()//Limpiar las celdas para reutilizarlas
         {
             txtNombre.Text = "";
             txtNumero.Text = "";
@@ -97,9 +121,30 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             txtDireccion.Text = "";
         }
 
+        public void Registrar()//Se registra los elemntos dentro de las celdas 
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                //Crear el objeto
+                var Cam = new Camionero();
+                Cam.Nombre = txtNombre.Text;
+                Cam.Numero = txtNumero.Text;
+                Cam.NumCamion = txtNumCamion.Text;
+                Cam.Direccion = txtDireccion.Text;
+
+
+                //Notificamos a EFC el agregar un Camionero
+                context.Camionero.Add(Cam);
+
+                //Guardamos los cambios
+                context.SaveChanges();
+            }
+        }
+
         private void FormCamioneros_Load(object sender, EventArgs e)
         {
-            MostrarCam();
+            MostrarCam();//Mostrar los registros dentros de la BD
+            Desactivar();//Desactivar los botnes inesarios de momento
         }
 
         private void dgvCamionero_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -109,6 +154,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             txtNumero.Text = dgvCamionero.CurrentRow.Cells[2].Value.ToString();
             txtNumCamion.Text = dgvCamionero.CurrentRow.Cells[3].Value.ToString();
             txtDireccion.Text = dgvCamionero.CurrentRow.Cells[4].Value.ToString();
+
+            Activar();//Activar los botones necesarios 
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -116,7 +163,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             using (var context = new ApplicationDbContext())
             {
                 var Cam = context.Camionero.Where(x => x.Nombre.Contains(txtNombre.Text)).ToList();
-    //            dgvCamionero.DataSource = Prov;
+                dgvCamionero.DataSource = Cam;
             }
         }
     }
