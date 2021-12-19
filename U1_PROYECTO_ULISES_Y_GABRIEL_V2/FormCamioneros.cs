@@ -48,7 +48,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             }
             else
             {
-                //Mensaje en x¡caso de que no se cumpla la condicion
+                //Mensaje en caso de que no se cumpla la condicion
                 MessageBox.Show("Algunos campos estan vacios favor de llenarlos ;)");
             }
             

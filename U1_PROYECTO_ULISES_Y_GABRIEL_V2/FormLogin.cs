@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using U1_PROYECTO_ULISES_Y_GABRIEL_V2.Models;
 
 namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 {
@@ -16,6 +17,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         public int id = 0;
         public string email = "";
 
+        Registros  jjjj = new Registros();
     
         public FormLogin()
         {
@@ -36,6 +38,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                 FormMenu frmMenu = new FormMenu();
                 frmMenu.ShowDialog();
             }
+            
         }
 
 

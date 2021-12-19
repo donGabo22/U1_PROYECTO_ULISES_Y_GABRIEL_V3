@@ -13,6 +13,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 {
     public partial class FormRegistroLogin : Form
     {
+        
         public FormRegistroLogin()
         {
             InitializeComponent();
