@@ -22,6 +22,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             lblHora.Text = DateTime.Now.ToString("H:mm:ss");
             //lblHora.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToString("d/MM/yyyy");
+      
         }
 
         private void btnCreditos_Click(object sender, EventArgs e)
@@ -68,7 +69,13 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void pbLista_Click(object sender, EventArgs e)
         {
+            FormCamioneros frmcam = new FormCamioneros();
+            frmcam.Show();
 
+
+
+
+                
         }
     }
 }
