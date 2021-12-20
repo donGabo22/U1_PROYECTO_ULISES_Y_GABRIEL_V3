@@ -29,6 +29,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCamioneros));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCamionero = new System.Windows.Forms.DataGridView();
@@ -48,6 +49,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.lblHora = new System.Windows.Forms.Label();
             this.pbMenu = new System.Windows.Forms.PictureBox();
             this.lblFecha = new System.Windows.Forms.Label();
+            this.fechayhora = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCamionero)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
@@ -229,6 +231,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.pbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbMenu.TabIndex = 3;
             this.pbMenu.TabStop = false;
+            this.pbMenu.Click += new System.EventHandler(this.pbMenu_Click);
             // 
             // lblFecha
             // 
@@ -241,6 +244,11 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.lblFecha.Size = new System.Drawing.Size(50, 21);
             this.lblFecha.TabIndex = 1;
             this.lblFecha.Text = "Fecha";
+            // 
+            // fechayhora
+            // 
+            this.fechayhora.Enabled = true;
+            this.fechayhora.Tick += new System.EventHandler(this.fechayhora_Tick);
             // 
             // FormCamioneros
             // 
@@ -266,6 +274,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormCamioneros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Camioneros";
             this.Load += new System.EventHandler(this.FormCamioneros_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCamionero)).EndInit();
@@ -297,5 +306,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.PictureBox pbMenu;
         private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Timer fechayhora;
     }
 }

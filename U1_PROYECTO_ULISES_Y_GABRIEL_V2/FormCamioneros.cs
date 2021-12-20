@@ -166,5 +166,18 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                 dgvCamionero.DataSource = Cam;
             }
         }
+
+        private void fechayhora_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("H:mm:ss");
+            //lblHora.Text = DateTime.Now.ToLongTimeString();
+            lblFecha.Text = DateTime.Now.ToString("d/MM/yyyy");
+
+        }
+
+        private void pbMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

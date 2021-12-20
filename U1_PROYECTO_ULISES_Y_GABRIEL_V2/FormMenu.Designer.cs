@@ -31,7 +31,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            this.lblpontunombreaqui = new System.Windows.Forms.Label();
             this.panelmenu = new System.Windows.Forms.Panel();
             this.btnCreditos = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -55,20 +54,9 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             ((System.ComponentModel.ISupportInitialize)(this.pbChoferes)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblpontunombreaqui
-            // 
-            this.lblpontunombreaqui.AutoSize = true;
-            this.lblpontunombreaqui.BackColor = System.Drawing.Color.Transparent;
-            this.lblpontunombreaqui.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblpontunombreaqui.Location = new System.Drawing.Point(3, 9);
-            this.lblpontunombreaqui.Name = "lblpontunombreaqui";
-            this.lblpontunombreaqui.Size = new System.Drawing.Size(277, 32);
-            this.lblpontunombreaqui.TabIndex = 12;
-            this.lblpontunombreaqui.Text = "Bienvenido + tu nombre";
-            // 
             // panelmenu
             // 
-            this.panelmenu.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelmenu.BackColor = System.Drawing.Color.Transparent;
             this.panelmenu.Controls.Add(this.btnCreditos);
             this.panelmenu.Controls.Add(this.btnRegresar);
             this.panelmenu.Controls.Add(this.label3);
@@ -168,6 +156,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // pbProducto
             // 
+            this.pbProducto.BackColor = System.Drawing.Color.Transparent;
             this.pbProducto.Image = ((System.Drawing.Image)(resources.GetObject("pbProducto.Image")));
             this.pbProducto.Location = new System.Drawing.Point(30, 100);
             this.pbProducto.Name = "pbProducto";
@@ -179,6 +168,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // pbProovedores
             // 
+            this.pbProovedores.BackColor = System.Drawing.Color.Transparent;
             this.pbProovedores.Image = ((System.Drawing.Image)(resources.GetObject("pbProovedores.Image")));
             this.pbProovedores.Location = new System.Drawing.Point(365, 100);
             this.pbProovedores.Name = "pbProovedores";
@@ -190,6 +180,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // pbChoferes
             // 
+            this.pbChoferes.BackColor = System.Drawing.Color.Transparent;
             this.pbChoferes.Image = ((System.Drawing.Image)(resources.GetObject("pbChoferes.Image")));
             this.pbChoferes.Location = new System.Drawing.Point(702, 100);
             this.pbChoferes.Name = "pbChoferes";
@@ -204,6 +195,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(30, 353);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 32);
@@ -215,6 +207,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(365, 353);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(238, 32);
@@ -226,17 +219,20 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(721, 353);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(712, 353);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(208, 32);
+            this.label5.Size = new System.Drawing.Size(200, 32);
             this.label5.TabIndex = 28;
-            this.label5.Text = "Lista de Productos";
+            this.label5.Text = "Agregar Choferes";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = global::U1_PROYECTO_ULISES_Y_GABRIEL_V2.Properties.Resources.neon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(978, 644);
             this.Controls.Add(this.label5);
@@ -247,7 +243,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.Controls.Add(this.pbProducto);
             this.Controls.Add(this.panelmenu);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblpontunombreaqui);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormMenu";
@@ -266,8 +261,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblpontunombreaqui;
         private System.Windows.Forms.Panel panelmenu;
         private System.Windows.Forms.Button btnCreditos;
         private System.Windows.Forms.Button btnRegresar;

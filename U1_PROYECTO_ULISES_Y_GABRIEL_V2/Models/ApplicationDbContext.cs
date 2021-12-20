@@ -16,6 +16,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=UlisesGabriel; Integrated Security=true").EnableSensitiveDataLogging(true);
         }
         public DbSet<Inventario> Inventarios { get; set; }
+        public DbSet<Inventario2> Inventarios2 { get; set; }
 
         public DbSet<Proveedores> Proveedores { get; set; }
         public DbSet<Camionero> Camionero { get; set; }

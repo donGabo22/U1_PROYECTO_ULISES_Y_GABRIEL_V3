@@ -57,6 +57,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.label5 = new System.Windows.Forms.Label();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.horayfecha = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbMenu)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,10 +73,11 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.panel1.Controls.Add(this.pbMenu);
             this.panel1.Controls.Add(this.lblFecha);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 604);
+            this.panel1.Location = new System.Drawing.Point(0, 704);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 40);
             this.panel1.TabIndex = 22;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lblHora
             // 
@@ -114,6 +117,8 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.txbZona);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dgvinventario);
@@ -137,13 +142,13 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(978, 609);
+            this.panel2.Size = new System.Drawing.Size(978, 708);
             this.panel2.TabIndex = 23;
             // 
             // txbZona
             // 
             this.txbZona.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txbZona.Location = new System.Drawing.Point(9, 377);
+            this.txbZona.Location = new System.Drawing.Point(0, 454);
             this.txbZona.Name = "txbZona";
             this.txbZona.Size = new System.Drawing.Size(318, 31);
             this.txbZona.TabIndex = 89;
@@ -152,10 +157,10 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(9, 323);
+            this.label6.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(3, 403);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(204, 55);
+            this.label6.Size = new System.Drawing.Size(175, 48);
             this.label6.TabIndex = 88;
             this.label6.Text = "Zona de Inventario:";
             // 
@@ -173,7 +178,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // txbCantidad
             // 
             this.txbCantidad.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txbCantidad.Location = new System.Drawing.Point(9, 211);
+            this.txbCantidad.Location = new System.Drawing.Point(0, 296);
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(180, 31);
             this.txbCantidad.TabIndex = 68;
@@ -186,7 +191,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             "Kg",
             "Lts",
             "Unidades"});
-            this.cbUnidadesdeMedida.Location = new System.Drawing.Point(190, 209);
+            this.cbUnidadesdeMedida.Location = new System.Drawing.Point(181, 294);
             this.cbUnidadesdeMedida.Name = "cbUnidadesdeMedida";
             this.cbUnidadesdeMedida.Size = new System.Drawing.Size(137, 33);
             this.cbUnidadesdeMedida.TabIndex = 86;
@@ -194,7 +199,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // txbBusqueda
             // 
             this.txbBusqueda.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txbBusqueda.Location = new System.Drawing.Point(3, 454);
+            this.txbBusqueda.Location = new System.Drawing.Point(-3, 557);
             this.txbBusqueda.Name = "txbBusqueda";
             this.txbBusqueda.Size = new System.Drawing.Size(324, 31);
             this.txbBusqueda.TabIndex = 85;
@@ -204,16 +209,16 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(9, 411);
+            this.label7.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(0, 506);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 55);
+            this.label7.Size = new System.Drawing.Size(75, 48);
             this.label7.TabIndex = 84;
             this.label7.Text = "Buscar";
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(175, 555);
+            this.btnRegresar.Location = new System.Drawing.Point(178, 659);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(112, 34);
             this.btnRegresar.TabIndex = 72;
@@ -234,7 +239,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(9, 555);
+            this.btnModificar.Location = new System.Drawing.Point(12, 659);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(112, 34);
             this.btnModificar.TabIndex = 70;
@@ -255,7 +260,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(9, 515);
+            this.btnRegistrar.Location = new System.Drawing.Point(12, 619);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(112, 34);
             this.btnRegistrar.TabIndex = 69;
@@ -266,7 +271,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // txbprecio
             // 
             this.txbprecio.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txbprecio.Location = new System.Drawing.Point(9, 289);
+            this.txbprecio.Location = new System.Drawing.Point(3, 369);
             this.txbprecio.Name = "txbprecio";
             this.txbprecio.Size = new System.Drawing.Size(318, 31);
             this.txbprecio.TabIndex = 76;
@@ -275,10 +280,10 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(0, 245);
+            this.label3.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(6, 318);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 55);
+            this.label3.Size = new System.Drawing.Size(69, 48);
             this.label3.TabIndex = 81;
             this.label3.Text = "Precio";
             // 
@@ -286,16 +291,16 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 158);
+            this.label2.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(0, 245);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 55);
+            this.label2.Size = new System.Drawing.Size(95, 48);
             this.label2.TabIndex = 80;
             this.label2.Text = "Cantidad";
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(175, 515);
+            this.btnEliminar.Location = new System.Drawing.Point(178, 619);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(112, 34);
             this.btnEliminar.TabIndex = 79;
@@ -315,7 +320,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             "Edulcorantes, incluida la miel y mermelada",
             "Huevos y productos a base de huevo",
             "Otro..."});
-            this.cbTipo.Location = new System.Drawing.Point(3, 127);
+            this.cbTipo.Location = new System.Drawing.Point(3, 112);
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(324, 33);
             this.cbTipo.TabIndex = 77;
@@ -324,10 +329,10 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 79);
+            this.label1.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(0, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 55);
+            this.label1.Size = new System.Drawing.Size(163, 48);
             this.label1.TabIndex = 64;
             this.label1.Text = "Tipo de Producto:";
             // 
@@ -335,10 +340,10 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Gabriola", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, -11);
+            this.label5.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(227, 55);
+            this.label5.Size = new System.Drawing.Size(197, 48);
             this.label5.TabIndex = 63;
             this.label5.Text = "Nombre del Producto:";
             // 
@@ -355,11 +360,31 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             this.horayfecha.Enabled = true;
             this.horayfecha.Tick += new System.EventHandler(this.horayfecha_Tick);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Gabriola", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(0, 148);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 48);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Empresa:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(3, 209);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(318, 33);
+            this.comboBox1.TabIndex = 91;
+            // 
             // FormInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 644);
+            this.ClientSize = new System.Drawing.Size(978, 744);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FormInventario";
@@ -404,5 +429,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbZona;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
     }
 }

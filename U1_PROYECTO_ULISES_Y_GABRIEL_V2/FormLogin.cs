@@ -15,7 +15,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
     public partial class FormLogin : Form
     {
         public int id = 0;
-        public string email = "";
 
         Registros  jjjj = new Registros();
     
@@ -33,47 +32,52 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txbUsuario.Text == "Admin" && txbContraseña.Text == "pass")
+            //if (txbUsuario.Text == "Admin" && txbContraseña.Text == "pass")
+            //{
+            //    FormMenu frmMenu = new FormMenu();
+            //    frmMenu.ShowDialog();
+            //}
+
+            //if (txbUsuario.Text != "Admin" || txbContraseña.Text != "pass")
+            //{
+            //    MessageBox.Show("Usuario o contraseña Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+
+            using (var context = new ApplicationDbContext())
             {
+                if (id != 0)
+                {
+                    var registro1 = context.registros.First(x => x.Email == txbUsuario.Text);
+                    var registro2 = context.registros.First(x => x.Contraseña == txbContraseña.Text);
+
+
+                }
+                MessageBox.Show(" existe");
                 FormMenu frmMenu = new FormMenu();
                 frmMenu.ShowDialog();
             }
-            
         }
 
-
-        private void conexion()
-        {
+            }
             //using (var context = new ApplicationDbContext())
             //{
             //    if (id != 0)
             //    {
-            //        var registro1 = context.registros.First(x => x.Email == email);
-            //        FormLogin registro = new FormLogin();
-            //        r = context.registros.First(y => y.Id == id);
-            //        if (r != null)
+            //        string ena = jjjj.Email;
+            //        var Registro = context.registros.Where(x => x.Email.Contains(jjjj.Email)).ToList();
+            //        //var Contraseña1 = context.registros.First(x => x.Contraseña.Contains(txbContraseña.Text));
+            //        if (txbUsuario.Text == jjjj.Email)
             //        {
-            //            if (registro.txbContraseña.Text = r.contraseña)
+            //            MessageBox.Show("correo correcto");
+            //            if (txbContraseña.Text == null)
             //            {
-            //                FormMenu frmMenu = new FormMenu();
-            //                frmMenu.ShowDialog();
-
-            //                //?                        }
 
             //            }
             //        }
             //    }
             //}
+
         }
-
-
-      
-        
-
-
-
-
-
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
