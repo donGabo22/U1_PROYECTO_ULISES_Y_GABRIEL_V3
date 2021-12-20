@@ -101,6 +101,9 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                     }
                 }
             }
+            Limpiar();//Limpiar las celdas
+            MostrarCam();//Actualizar la tabla
+            Desactivar();//Desactivar los botones 
         }
         public void Activar()//Activar botones Eliminar y modificar
         {

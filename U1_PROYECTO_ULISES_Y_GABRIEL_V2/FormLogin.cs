@@ -58,7 +58,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             }
         }
 
-            }
+            
             //using (var context = new ApplicationDbContext())
             //{
             //    if (id != 0)
@@ -77,7 +77,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             //    }
             //}
 
-        }
+        
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -132,4 +132,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         }
     }
-}
+}  
+
+
