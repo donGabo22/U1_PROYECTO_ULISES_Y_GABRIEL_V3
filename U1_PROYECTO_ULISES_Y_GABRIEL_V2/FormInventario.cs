@@ -39,6 +39,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             AgregarProducto();
             todoProducto();
             Limpiar();
+
         }
         private void Limpiar()
         {
@@ -75,6 +76,10 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                     }
                 }
             }
+            Limpiar();
+            todoProducto();
+            Desactivar();
+
         }
 
 
@@ -108,7 +113,7 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             txbZona.Text = dgvinventario.CurrentRow.Cells[5].Value.ToString();
             lblHoraandFecha.Text = (dgvinventario.CurrentRow.Cells[6].Value.ToString());
 
-
+            Activar();
         }
 
 
@@ -138,8 +143,16 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
             }
         }
 
-
-
+        public  void Activar()
+        {
+            btnModificar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+        public void Desactivar()
+        {
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
 
 
 
@@ -171,11 +184,15 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
                 }
 
             }
+            Limpiar();
+            todoProducto();
+            Desactivar();
         }
 
         private void FormInventario_Load(object sender, EventArgs e)
         {
             todoProducto();
+            Desactivar();
 
         }
 

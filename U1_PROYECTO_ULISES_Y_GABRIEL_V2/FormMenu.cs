@@ -71,10 +71,6 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
         {
             FormCamioneros frmcam = new FormCamioneros();
             frmcam.Show();
-
-
-
-
                 
         }
     }
