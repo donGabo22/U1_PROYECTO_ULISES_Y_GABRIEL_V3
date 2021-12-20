@@ -16,13 +16,13 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
     {
         public int id = 0;
 
-        Registros  jjjj = new Registros();
-    
+        Registros jjjj = new Registros();
+
         public FormLogin()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
-        //    materialSkinManager.AddFormToManage(this);
+            //    materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.LightBlue200, TextShade.WHITE);
             label1.Font = new Font(label1.Font.Name, 12);
@@ -32,54 +32,55 @@ namespace U1_PROYECTO_ULISES_Y_GABRIEL_V2
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //if (txbUsuario.Text == "Admin" && txbContraseña.Text == "pass")
-            //{
-            //    FormMenu frmMenu = new FormMenu();
-            //    frmMenu.ShowDialog();
-            //}
-
-            //if (txbUsuario.Text != "Admin" || txbContraseña.Text != "pass")
-            //{
-            //    MessageBox.Show("Usuario o contraseña Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
-            using (var context = new ApplicationDbContext())
-            {
-                if (id != 0)
-                {
-                    var registro1 = context.registros.First(x => x.Email == txbUsuario.Text);
-                    var registro2 = context.registros.First(x => x.Contraseña == txbContraseña.Text);
-
-
-                }
-                MessageBox.Show(" existe");
-                FormMenu frmMenu = new FormMenu();
-                frmMenu.ShowDialog();
-            }
-        }
-
-            
-            //using (var context = new ApplicationDbContext())
-            //{
-            //    if (id != 0)
+            //    if (txbUsuario.Text == "Admin" && txbContraseña.Text == "pass")
             //    {
-            //        string ena = jjjj.Email;
-            //        var Registro = context.registros.Where(x => x.Email.Contains(jjjj.Email)).ToList();
-            //        //var Contraseña1 = context.registros.First(x => x.Contraseña.Contains(txbContraseña.Text));
-            //        if (txbUsuario.Text == jjjj.Email)
-            //        {
-            //            MessageBox.Show("correo correcto");
-            //            if (txbContraseña.Text == null)
-            //            {
+            //        FormMenu frmMenu = new FormMenu();
+            //        frmMenu.ShowDialog();
+            //    }
 
-            //            }
-            //        }
+            //    if (txbUsuario.Text != "Admin" || txbContraseña.Text != "pass")
+            //    {
+            //        MessageBox.Show("Usuario o contraseña Invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //    }
             //}
 
-        
+            //    using (var context = new ApplicationDbContext())
+            //    {
+            //        if (id != 0)
+            //        {
+            //            var registro1 = context.registros.First(x => x.Email == txbUsuario.Text);
+            //            var registro2 = context.registros.First(x => x.Contraseña == txbContraseña.Text);
 
-        private void btnSalir_Click(object sender, EventArgs e)
+
+            //        }
+            //        MessageBox.Show(" existe");
+            //        FormMenu frmMenu = new FormMenu();
+            //        frmMenu.ShowDialog();
+            //    }
+            //}
+
+
+            using (var context = new ApplicationDbContext())
+            {
+                if (txbUsuario.Text is not null)
+                {
+                //    string ena = jjjj.Email;
+                    var Registro = context.registros.Where(x => x.Email.Contains(jjjj.Email));
+                    if (Registro is not null )
+                    {
+                        MessageBox.Show("correo correcto");
+                        if (txbContraseña.Text == null)
+                        {
+                         var Contraseña1 = context.registros.First(x => x.Contraseña.Contains(txbContraseña.Text));
+
+                        }
+                    }
+                }
+            }
+        }
+
+
+            private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
